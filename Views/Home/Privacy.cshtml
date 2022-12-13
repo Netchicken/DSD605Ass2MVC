@@ -1,0 +1,99 @@
+﻿@using System.Collections
+@using DSD605Ass2MVC.DTO
+
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Use this page to detail your site's privacy policy.</p>
+@*<div class="text-center">
+    <h1 class="display-4">Welcome To the Bikeshop database</h1>
+    <p> <a asp-controller="Customers" asp-action="Index">Enter a Customer </a> </p>
+    <p> <a asp-controller="Stocks" asp-action="Index">Enter some Stock </a> </p>
+    <p><a asp-controller="Orders" asp-action="Index">Make a Sale </a></p>
+
+</div>
+
+<h1>Assessment Answers - there may be slight differences</h1>
+<h2>Q11 Stock Not sold</h2>
+<table>
+    @foreach (var item in (IEnumerable<string>)ViewData["StockNotSold"])
+    {
+        <tr>
+            <td>
+                @item
+
+            </td>
+        </tr>
+    }
+</table>
+
+<h2>Q12 Who Sold the Cheapest Stock?</h2>
+<p>@ViewData["StaffWhoSoldCheapestStock"]</p>
+
+
+<h2> 13.Create a list of customers names and the products they have purchased, grouped by Customer.</h2>
+<table>
+    @foreach (var item in (IEnumerable<CustomersAndPurchasesDTO>)ViewData["CustomersAndPurchases"])
+    {
+        <tr>
+            <td>
+                @item.Name ... @item.ProductName
+
+            </td>
+        </tr>
+    }
+</table>
+
+
+<h2> 14.	What is the name of the customer who has bought the greatest quantity of products?</h2>
+<table>
+    @foreach (var item in (IEnumerable<MostSoldDTO>)ViewData["CustomerBoughtMostItems"])
+    {
+        <tr>
+            <td>
+                How Many = @item.Count ... @item.ProductName
+            </td>
+        </tr>
+    }
+</table>
+
+<h2> 15.	What is the name of the customer who has spent the most money at the Bike Shop?</h2>
+<table>
+    @foreach (var item in (IEnumerable<CustomerWhoSpentMostDTO>)ViewData["CustomerWhoSpentMost"])
+    {
+        <tr>
+            <td>
+                $@item.Cost ... @item.Name
+            </td>
+        </tr>
+    }
+</table>
+
+
+<h2>16.Create a list of the 5 dearest stock items with their names and prices, from most expensive to least expensive.</h2>
+<table>
+    @foreach (var item in (IEnumerable<TopSalesDTO>)ViewData["AllSalesTop5"])
+    {
+        <tr>
+            <td>
+                @item.ProductName  --- @item.Price
+            </td>
+        </tr>
+    }
+</table>
+<h2>17.	List all the stock that have Saddle in the Name or Description.</h2>
+<table>
+    @foreach (var item in (IEnumerable<Stock>)ViewData["SaddleStock"])
+    {
+        <tr>
+            <td>
+                @item.ProductName   ---- @item.ProductDescription
+            </td>
+        </tr>
+    }
+</table>*@
+
+
+
