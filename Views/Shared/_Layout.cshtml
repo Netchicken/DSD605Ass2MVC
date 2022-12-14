@@ -30,8 +30,8 @@
                             <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         @*<li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>*@
+            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </li>*@
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-controller="Customers" asp-action="Index">Enter a Customer</a>
                         </li>
@@ -44,6 +44,24 @@
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-controller="Staffs" asp-action="Index">Staff</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-page="/ClaimsManager/Index">View Claims</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-page="/ClaimsManager/Assign">Assign Claim</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-page="/RolesManager/Index">View Roles</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-page="/RolesManager/Assign">Assign Roles</a>
+                        </li>
+
+
+
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>
@@ -56,7 +74,7 @@
           </div>
     </div>
     <div class="container">
-        <main role="main" class="pb-3">
+        <main role="main" class="pb-3" style="background-color:aliceblue">
             @RenderBody()
         </main>
     </div>

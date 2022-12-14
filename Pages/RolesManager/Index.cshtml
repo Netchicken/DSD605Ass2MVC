@@ -1,0 +1,18 @@
+﻿@page
+@model DSD605Ass2MVC.Pages.RolesManager.IndexModel
+@{
+    ViewData["Title"] = "Roles";
+}
+<a asp-page="/RolesManager/Create">New</a>
+@if (Model.Roles.Any())
+{
+    <table class="table">
+        @foreach (var role in Model.Roles)
+        {
+            <tr>
+                <td>@role.Name</td>
+            </tr>
+
+        }
+    </table>
+}

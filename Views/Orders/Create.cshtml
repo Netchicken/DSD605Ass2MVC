@@ -15,25 +15,25 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label   style="color:white;" asp-for="OrderDate" class="control-label">Order Date</label>
+                <label    asp-for="OrderDate" class="control-label">Order Date</label>
                 <input asp-for="OrderDate" class="form-control" />
                 <span asp-validation-for="OrderDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label style="color:white;"  asp-for="ShippedDate" class="control-label">Shipped Date</label>
+                <label   asp-for="ShippedDate" class="control-label">Shipped Date</label>
                 <input asp-for="ShippedDate" class="form-control" />
                 <span asp-validation-for="ShippedDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label style="color:white;"  asp-for="CustomerId" class="control-label">Customer</label>
+                <label   asp-for="CustomerId" class="control-label">Customer</label>
                 <select asp-for="CustomerId" class ="form-control" asp-items="ViewBag.CustomerId"></select>
             </div>
             <div class="form-group">
-                <label style="color:white;"  asp-for="StockId" class="control-label">Stock</label>
+                <label   asp-for="StockId" class="control-label">Stock</label>
                 <select asp-for="StockId" class ="form-control" asp-items="ViewBag.StockId"></select>
             </div>
             <div class="form-group">
-                <label  style="color:white;" asp-for="StaffId" class="control-label">Staff</label>
+                <label   asp-for="StaffId" class="control-label">Staff</label>
                 <select asp-for="StaffId" class ="form-control" asp-items="ViewBag.StaffId"></select>
             </div>
             <div class="form-group">

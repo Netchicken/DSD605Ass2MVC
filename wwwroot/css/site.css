@@ -1,16 +1,16 @@
 html {
-  font-size: 14px;
+    /* font-size: 14px;*/
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
@@ -20,6 +20,7 @@ body {
     animation: gradient 15s ease infinite;
     height: 100vh;
 }
+
 @keyframes gradient {
     0% {
         background-position: 0% 50%;
@@ -35,13 +36,20 @@ body {
 }
 
 .table {
-    color: white !important;
-}
-.table a {
-    color: white !important;
+    color: black !important;
+    font-size: 20px;
 }
 
+    .table a {
+        color: black !important;
+    }
+
 .p a {
-    color: white !important;
+    color: black !important;
     text-decoration: underline;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.linkbuttons {
 }
