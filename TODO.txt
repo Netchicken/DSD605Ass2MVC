@@ -1,0 +1,10 @@
+
+Remove staff and use aspnetusers table
+Change sale to use new staff table
+Create page that confirms new and deleted stock
+Modify CRUD for staff to be from aspnetusers
+
+https://www.youtube.com/watch?v=tYT9ykDEnjE
+
+https://learn.microsoft.com/en-us/answers/questions/876044/microsoft-identity-extending-tables.html
+

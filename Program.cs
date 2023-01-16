@@ -19,6 +19,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
 
 builder.Services.AddControllersWithViews();
 
+builder.Services.Configure<PasswordHasherOptions>(options => { options.IterationCount = 310000; });
 
 
 builder.Services.AddRazorPages();
