@@ -1,13 +1,10 @@
 ﻿#nullable disable
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using DSD605Ass2MVC.Data;
 using DSD605Ass2MVC.Models;
+
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace DSD605Ass2MVC.Controllers
 {
@@ -44,6 +41,7 @@ namespace DSD605Ass2MVC.Controllers
             return View(stock);
         }
 
+        [Authorize(Policy = "AddStockPolicy")]
         // GET: Stocks/Create
         public IActionResult Create()
         {
@@ -68,6 +66,7 @@ namespace DSD605Ass2MVC.Controllers
         }
 
         // GET: Stocks/Edit/5
+        [Authorize(Policy = "EditStockPolicy")]
         public async Task<IActionResult> Edit(Guid? id)
         {
             if (id == null)
@@ -119,6 +118,7 @@ namespace DSD605Ass2MVC.Controllers
         }
 
         // GET: Stocks/Delete/5
+        [Authorize(Policy = "DeleteStockPolicy")]
         public async Task<IActionResult> Delete(Guid? id)
         {
             if (id == null)
