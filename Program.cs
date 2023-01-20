@@ -6,7 +6,20 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
+var CORSAllowSpecificOrigins = "_CORSAllowed";
+
 var builder = WebApplication.CreateBuilder(args);
+
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: CORSAllowSpecificOrigins,
+                         policy =>
+                         {
+                             policy.WithOrigins("http://localhost:3000", "http://www.contoso.com");
+                         });
+});
+
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
@@ -38,7 +51,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddAuthorization(options =>
 {
 
-    //staff with over 6 months of service and permission View Roles can view roles
+    //1 staff with over 6 months of service and permission View Roles can view roles
     options.AddPolicy("ViewRolesPolicy", policyBuilder => policyBuilder.RequireAssertion(context =>
     {
         var joiningDateClaim = context.User.FindFirst(c => c.Type == "Joining Date")?.Value;
@@ -46,7 +59,7 @@ builder.Services.AddAuthorization(options =>
         return context.User.HasClaim("Permission", "View Roles") && joiningDate > DateTime.MinValue && joiningDate < DateTime.Now.AddMonths(-6);
     }));
 
-    //staff with over 6 months of service and permission View Claims can view roles
+    //2 staff with over 6 months of service and permission View Claims can view claims folder
     options.AddPolicy("ViewClaimsPolicy", policyBuilder => policyBuilder.RequireAssertion(context =>
     {
         var joiningDateClaim = context.User.FindFirst(c => c.Type == "Joining Date")?.Value;
@@ -56,19 +69,19 @@ builder.Services.AddAuthorization(options =>
 
 
 
-    //staff with permission Delete Stock can Delete Stock
+    //3 staff with permission Delete Stock can Delete Stock
     options.AddPolicy("DeleteStockPolicy", policyBuilder => policyBuilder.RequireAssertion(context =>
     {
         return context.User.HasClaim("Permission", "Delete Stock");
     }));
 
-    //staff with permission Edit Stock can Edit Stock
+    //4 staff with permission Edit Stock can Edit Stock
     options.AddPolicy("EditStockPolicy", policyBuilder => policyBuilder.RequireAssertion(context =>
     {
         return context.User.HasClaim("Permission", "Edit Stock");
     }));
 
-    //staff over 18 can add stock
+    //5 staff over 18 can add stock
     options.AddPolicy("AddStockPolicy", policyBuilder => policyBuilder.RequireAssertion(context =>
     {
 
@@ -102,8 +115,6 @@ builder.Services.AddRazorPages(options =>
 {
 
     options.Conventions.AuthorizeFolder("/RolesManager", "ViewRolesPolicy");
-
-
     options.Conventions.AuthorizeFolder("/ClaimsManager", "ViewClaimsPolicy");
 
 });
@@ -149,7 +160,7 @@ builder.Services.ConfigureApplicationCookie(options =>
 
 //=============END NEW SECURITY================
 
-
+builder.Services.AddSwaggerGen();
 
 
 
@@ -161,6 +172,9 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseMigrationsEndPoint();
+    app.UseSwagger();
+    app.UseSwaggerUI();
+
 }
 else
 {
@@ -173,6 +187,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseCors(CORSAllowSpecificOrigins);
+
 
 app.UseAuthentication();
 app.UseAuthorization();

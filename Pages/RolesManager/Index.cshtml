@@ -15,4 +15,13 @@
 
         }
     </table>
+    <table class="table">
+        @foreach (var result in Model.UserAndRoles)
+        {
+            <tr>
+                <td>@result.UserName</td>
+                <td>@result.RoleName</td>
+            </tr>
+        }
+    </table>
 }
