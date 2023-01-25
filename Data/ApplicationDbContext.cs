@@ -9,9 +9,14 @@ namespace DSD605Ass2MVC.Data
             : base(options)
         {
         }
+
+
+
         public DbSet<DSD605Ass2MVC.Models.Customer>? Customer { get; set; }
         public DbSet<DSD605Ass2MVC.Models.Order>? Order { get; set; }
         public DbSet<DSD605Ass2MVC.Models.Staff>? Staff { get; set; }
         public DbSet<DSD605Ass2MVC.Models.Stock>? Stock { get; set; }
     }
 }
+
+

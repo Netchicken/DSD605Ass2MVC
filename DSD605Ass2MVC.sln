@@ -5,6 +5,8 @@ VisualStudioVersion = 17.1.32120.378
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DSD605Ass2MVC", "DSD605Ass2MVC.csproj", "{1DA03792-DB55-4FA2-8030-A84DEF1EDACF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIIntegrationTests", "..\APIIntegrationTests\APIIntegrationTests.csproj", "{3A25059A-E514-4D09-8F5A-C468B0D4FF6B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{1DA03792-DB55-4FA2-8030-A84DEF1EDACF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DA03792-DB55-4FA2-8030-A84DEF1EDACF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1DA03792-DB55-4FA2-8030-A84DEF1EDACF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A25059A-E514-4D09-8F5A-C468B0D4FF6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A25059A-E514-4D09-8F5A-C468B0D4FF6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A25059A-E514-4D09-8F5A-C468B0D4FF6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A25059A-E514-4D09-8F5A-C468B0D4FF6B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

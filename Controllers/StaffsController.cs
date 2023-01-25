@@ -1,16 +1,14 @@
 ﻿#nullable disable
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using DSD605Ass2MVC.Data;
 using DSD605Ass2MVC.Models;
 
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+
 namespace DSD605Ass2MVC.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class StaffsController : Controller
     {
         private readonly ApplicationDbContext _context;
